@@ -5,7 +5,8 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallery = document.querySelector('.gallery');
 const loader = document.querySelector('.loader');
-const lightbox = new SimpleLightbox('.gallery a', {
+const btnLoadMore = document.querySelector('.btn-load-more');
+const lightbox = new SimpleLightbox('.gallery .gallery-link', {
   captions: true,
   captionsData: 'alt',
   captionPosition: 'bottom',
@@ -26,10 +27,10 @@ export function createGallery(images) {
       />
     </a>
     <ul class="info-list">
-    <li class="info-item"><h3 class="info-title">Likes</h3><p class="info-text">${elem.likes}</p></li>
-    <li class="info-item"><h3 class="info-title">Views</h3><p class="info-text">${elem.views}</p></li>
-    <li class="info-item"><h3 class="info-title">Comments</h3><p class="info-text">${elem.comments}</p></li>
-    <li class="info-item"><h3 class="info-title">Downloads</h3><p class="info-text">${elem.downloads}</p></li>
+      <li class="info-item"><h3 class="info-title">Likes</h3><p class="info-text">${elem.likes}</p></li>
+      <li class="info-item"><h3 class="info-title">Views</h3><p class="info-text">${elem.views}</p></li>
+      <li class="info-item"><h3 class="info-title">Comments</h3><p class="info-text">${elem.comments}</p></li>
+      <li class="info-item"><h3 class="info-title">Downloads</h3><p class="info-text">${elem.downloads}</p></li>
     </ul>
   </li>`;
     })
@@ -50,4 +51,12 @@ export function showLoader() {
 
 export function hideLoader() {
   loader.style.display = 'none';
+}
+
+export function showLoadMoreButton() {
+  btnLoadMore.style.display = 'block';
+}
+
+export function hideLoadMoreButton() {
+  btnLoadMore.style.display = 'none';
 }

@@ -1,7 +1,19 @@
-.container{
+.container {
   margin: 0 auto;
-  max-width: 1180px;
+  max-width: 1160px;
   padding: 16px;
+}
+
+@media screen and (max-width: 1160px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 375px;
+  }
 }
 
 .input-search {
@@ -66,49 +78,88 @@
 }
 
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  margin: 0 auto 32px auto;
+}
+
+@media screen and (max-width: 1160px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .gallery-item {
-  width: calc((100% - 48) / 3);
+  width: 360px;
   border: 1px solid #808080;
   position: relative;
 }
 
-.gallery-image{
-width: 360px;
-height: 250px;
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  object-fit: cover;
 }
 
-.info-list{
+.info-list {
   display: flex;
   position: absolute;
-    bottom: 0;
+  bottom: 0;
   background-color: #fff;
-width: 360px;
-padding: 4px 20px;
-gap: 29px;
-justify-content: center;
+  width: 100%;
+  padding: 4px 20px;
+  gap: 29px;
+  justify-content: center;
 }
 
-.info-item{
+.info-item {
   display: flex;
   flex-direction: column;
-
 }
 
-.info-title{
-font-weight: 600;
-font-size: 12px;
-line-height: 1.33333;
-letter-spacing: 0.04em;
+.info-title {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: 0.04em;
 }
 
-.info-text{
-font-size: 12px;
-line-height: 2;
-letter-spacing: 0.04em;
-text-align: center;
+.info-text {
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.btn-load-more {
+  display: none;
+
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 126px;
+  height: 40px;
+  background-color: #4e75ff;
+  border: none;
+  margin: 0 auto;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+
+  transition: background-color 250ms ease-in-out;
+}
+
+.btn-load-more:hover,
+.btn-load-more:focus {
+  background-color: #6c8cff;
 }
